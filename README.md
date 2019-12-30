@@ -1,11 +1,6 @@
-# jekyll-theme-clean-portfolio
+# Clean Portfolio
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
-
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
-
-TODO: Delete this and the text above, and describe your gem
-
+A clean and minimal jekyll theme for your portfolio website.
 
 ## Installation
 
@@ -23,19 +18,26 @@ theme: jekyll-theme-clean-portfolio
 
 And then execute:
 
-    $ bundle
+    bundle
 
 Or install it yourself as:
 
-    $ gem install jekyll-theme-clean-portfolio
+    gem install jekyll-theme-clean-portfolio
 
 ## Usage
 
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
+Just create a repository named `<yourusername>.github.io` and then copy all files from this repostory into that repository
+
+Make appropriate changes to the _config.yml file. The configuration is pretty trivial.
+
+## Features:
+- Powered by Bootstrap 4
+- Resume generated using a canvas element and PDF.js
+- Support for diagrams using mermaid
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ad1tyawagh/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Development
 
