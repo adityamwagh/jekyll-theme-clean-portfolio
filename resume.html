@@ -1,0 +1,65 @@
+---
+layout: blank
+---
+<div class="d-flex justify-content-center p-5 bg-dark">
+    <button type="button" class="btn btn-primary btn-lg">
+        <a class=" text-white" id="resume-link"
+            href="{{ site.resume_link }}">Download</a>
+    </button>
+</div>
+
+<div class="container-fluid p-5 bg-dark" style="text-align:center">
+
+    <canvas class="container box-shadow shadow bg-white rounded" id="cv" style="width: 80%;
+        height: auto;"></canvas>
+    <!-- Use latest PDF.js build from Github -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.3.200/pdf.js"></script>
+
+    <script type="text/javascript">
+        var url = document.getElementById("resume-link").getAttribute("href");
+        var pdf = null;
+        pdfjsLib.disableWorker = true;
+        var pages = new Array();
+        //Prepare some things
+        var canvas = document.getElementById('cv');
+        var context = canvas.getContext('2d');
+        var scale = 5;
+        var canvasWidth = 0;
+        var canvasHeight = 0;
+        var pageStarts = new Array();
+        pageStarts[0] = 0;
+
+        pdfjsLib.getDocument(url).then(function getPdfHelloWorld(_pdf) {
+            pdf = _pdf;
+            //Render all the pages on a single canvas
+            for (var i = 1; i <= pdf.numPages; i++) {
+                pdf.getPage(i).then(function getPage(page) {
+                    var viewport = page.getViewport(scale);
+                    // changing canvas.width and/or canvas.height auto-clears the canvas
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+                    page.render({ canvasContext: context, viewport: viewport });
+                    pages[i - 1] = context.getImageData(0, 0, canvas.width, canvas.height);
+                    // calculate the width of the final display canvas
+                    if (canvas.width > maxCanvasWidth) {
+                        maxCanvasWidth = canvas.width;
+                    }
+                    // calculate the accumulated with of the final display canvas
+                    canvasHeight += canvas.height;
+                    // save the "Y" starting position of this pages[i]
+                    pageStarts[i] = pageStarts[i - 1] + canvas.height;
+                    p.Out("pre-rendered page " + i);
+                });
+            }
+
+
+            canvas.width = canvasWidth;
+            canvas.height = canvasHeight;  // this auto-clears all canvas contents
+            for (var i = 0; i < pages.length; i++) {
+                context.putImageData(pages[i], 0, pageStarts[i]);
+            }
+
+        });
+    </script>
+    </a>
+</div>

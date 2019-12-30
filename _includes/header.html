@@ -1,0 +1,65 @@
+<header
+    class="sticky-header active border-bottom">
+    <!-- -Navbar -->
+
+    <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light bg-white mx-auto">
+            <a class="navbar-brand mr-5" href="{{ site.url }}">
+                <img height="auto" src="{{ site.baseurl }}/assets/icons/icon.png" width="36px">
+
+                    <b class="align-bottom" style="font-size: larger; font-weight:600!important; text-transform: uppercase;">&nbsp {{site.firstname}}</b>
+
+                    <span class="align-bottom" style="font-size: larger; text-transform: uppercase; ">{{site.secondname}}</span>
+                </a>
+
+                <!-- Toggler/collapsibe Button -->
+
+                <button class="navbar-toggler" data-target="#collapsibleNavbar" data-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar links -->
+
+                <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        {% for menu_item in site.data.menu %}
+
+                            <li class="nav-item pl-3 pr-3 font-weight-bold">
+                                <a href="{{ site.baseurl }}{{ menu_item.href }}" class="nav-link text-gray-dark">{{ menu_item.title }}</a>
+                            </li>
+
+                        {% endfor %}    
+                        <li class="nav-item pl-3 pr-3 font-weight-bold">
+                            <a href="{{ site.baseurl }}/index#Projects" class="nav-link text-gray-dark">{{ menu_item.title }}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="header-social-icons navbar-nav ml-auto d-none d-md-inline-flex ">
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link" href="https://github.com/{{ site.github_username }}" title="View my GitHub profile">
+                            <i class="fab fa-github" style="font-size: 2rem; color: #000;"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="View my LinkedIn profile">
+                            <i class="fab fa-linkedin" style="font-size: 2rem; color: #0077b5;"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link" href="https://twitter.com/{{ site.twitter_username }}" title="Tweet at me">
+                            <i class="fab fa-twitter" style="font-size: 2rem; color: #55acee;"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link" href="mailto:{{site.general_email}}" title="Email Me">
+                            <i class="fas fa-at" style="font-size: 2rem;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>

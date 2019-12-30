@@ -1,0 +1,239 @@
+// Basic Styling
+
+body {
+  overflow: scroll;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  color: #000;
+  background-color: $background-color;
+  -webkit-text-size-adjust: 100%;
+}
+
+.updates {
+  margin-bottom: 15px;
+  overflow-y: auto;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+}
+
+// Images
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+// Lists
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+
+// Blockquotes
+
+blockquote {
+  color: $grey-color;
+  border-left: 4px solid $grey-color-light;
+  padding-left: $spacing-unit / 2;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Code formatting
+ */
+ pre,
+ code {
+   font-size: $base-font-size * 0.8;
+   background-color: $code-background-color;
+ }
+ 
+ code {
+   margin: 0em;
+ }
+ 
+ pre { 
+   margin: 0em;
+   padding : 1em;
+   overflow-x: auto;
+ 
+   > code {
+     border: 0;
+     padding-right: 0;
+     padding-left: 0;
+   }
+ }
+ 
+ .highlight {
+  border: 0px solid $grey-color-light;
+  border-radius: .25em;
+ 
+ }
+ .highlighter-rouge {
+   margin-bottom: 1em;
+ 
+ }
+// Clearfix
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Icons
+
+.icon {
+  > svg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+
+    path {
+      fill: $grey-color;
+    }
+  }
+}
+
+.my-name {
+  font-family: $title-font-family;
+  text-align: center;
+  font-size: 30px;
+}
+
+// Style the Image Used to Trigger the Modal
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 9999;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+// The Modal (background)
+
+.modal {
+  display: none;
+  // Hidden by default
+
+  position: fixed;
+  // Stay in place
+
+  z-index: 1;
+  // Sit on top
+
+  padding-top: 100px;
+  // Location of the box
+
+  left: 0;
+  top: 0;
+  width: 100%;
+  // Full width
+
+  height: 100%;
+  // Full height
+
+  overflow: auto;
+  // Enable scroll if needed
+
+  background-color: rgb(0, 0, 0);
+  // Fallback color
+
+  background-color: rgba(0, 0, 0, 0.9);
+  // Black w/ opacity
+
+  z-index: 9999;
+}
+
+// Modal Content (Image)
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  z-index: 9999;
+}
+
+// Caption of Modal Image (Image Text) - Same Width as the Image
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+  z-index: 9999;
+}
+
+// Add Animation - Zoom in the Modal
+
+.modal-content,
+#caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+  z-index: 9999;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+// The Close Button
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 9999;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+// 100% Image Width on Smaller Screens
+
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+

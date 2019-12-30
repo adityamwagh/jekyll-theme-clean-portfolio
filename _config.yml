@@ -1,0 +1,38 @@
+# Site settings
+title: Your Name
+firstname: Your 
+secondname: Name
+general_email: your_email@domain.com
+academic_email: academic_email@domain.com
+baseurl: ""
+url: "" 
+twitter_username: twitter_username
+github_username: github_username
+linkedin_username: linkedin_username
+resume_link: https://grad.illinois.edu/sites/default/files/PDFs/CVsamples.pdf
+
+# Build settings
+sass:
+  sass_dir: assets/css
+markdown: kramdown
+mathjax: true
+kramdown:
+  math_engine: mathjax
+highlighter: rouge  
+
+
+# Other options
+permalink: blog/:year/:month/:title
+
+plugins:
+- github-pages
+- jekyll-seo-tag
+- jekyll-menus
+- jekyll-remote-theme 
+- jekyll-archives
+- jekyll-compose 
+- jemoji
+- jekyll-youtube
+- jekyll-seo-tag 
+- jekyll-font-awesome-sass
+- jekyll-toc
