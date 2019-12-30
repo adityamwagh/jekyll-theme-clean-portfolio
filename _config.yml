@@ -4,7 +4,9 @@ firstname: Your
 secondname: Name
 general_email: your_email@domain.com
 academic_email: academic_email@domain.com
+
 baseurl: ""
+
 url: "" 
 twitter_username: twitter_username
 github_username: github_username
@@ -14,6 +16,7 @@ resume_link: https://grad.illinois.edu/sites/default/files/PDFs/CVsamples.pdf
 # Build settings
 sass:
   sass_dir: assets/css
+
 markdown: kramdown
 mathjax: true
 kramdown:
