@@ -1,11 +1,11 @@
 - title: "Home"
-  href: "index"
+  href: "/index"
 
 - title: "Blog"
-  href: "blog"
+  href: "/blog"
 
 - title: "Projects"
-  href: "index#Projects"
+  href: "/index#Projects"
 
 - title: "CV"
-  href: "resume"
+  href: "/resume"
