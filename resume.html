@@ -8,7 +8,7 @@ layout: blank
     </button>
     <button type="button" class="btn btn-primary btn-lg mx-1">
         <a class=" text-white" id="resume-link"
-            href="{{ site.resume_link }}">Download</a>
+            href="{{site.baseurl}}{{ site.resume_link }}">Download</a>
     </button>
 </div>
 
@@ -21,6 +21,7 @@ layout: blank
 
     <script type="text/javascript">
         var url = document.getElementById("resume-link").getAttribute("href");
+        console.log(url)
         var pdf = null;
         pdfjsLib.disableWorker = true;
         var pages = new Array();
