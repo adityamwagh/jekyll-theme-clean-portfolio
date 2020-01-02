@@ -1,7 +1,8 @@
 // Basic Styling
 
 body {
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   font-family: $base-font-family;
   font-size: $base-font-size;
   color: #000;
