@@ -16,7 +16,7 @@ url: "https://adityawagh.ml" # the base hostname & protocol for your site
 twitter_username: twitter_username
 github_username: github_username
 linkedin_username: linkedin_username
-resume_link: https://grad.illinois.edu/sites/default/files/PDFs/CVsamples.pdf
+resume_link: https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf
 
 # Build settings
 sass:

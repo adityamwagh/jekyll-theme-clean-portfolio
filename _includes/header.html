@@ -7,9 +7,10 @@
             <a class="navbar-brand mr-5" href="{{ site.baseurl }}">
                 <img height="auto" src="{{ site.baseurl }}/assets/icons/icon.png" width="36px">
 
-                    <b class="align-bottom" style="font-size: larger; font-weight:600!important; text-transform: uppercase;">&nbsp {{site.firstname}}</b>
+                    <b class="align-bottom" style="font-size: larger; font-weight:600!important; text-transform: uppercase;">&nbsp
+                        {{ site.firstname }}</b>
 
-                    <span class="align-bottom" style="font-size: larger; text-transform: uppercase; ">{{site.secondname}}</span>
+                    <span class="align-bottom" style="font-size: larger; text-transform: uppercase; ">{{ site.secondname }}</span>
                 </a>
 
                 <!-- Toggler/collapsibe Button -->
@@ -28,10 +29,18 @@
                                 <a href="{{ site.baseurl }}{{ menu_item.href }}" class="nav-link text-gray-dark">{{ menu_item.title }}</a>
                             </li>
 
-                        {% endfor %}    
-                        <li class="nav-item pl-3 pr-3 font-weight-bold">
-                            <a href="{{ site.baseurl }}/index#Projects" class="nav-link text-gray-dark">{{ menu_item.title }}</a>
+                        {% endfor %}
+
+                        <!-- Display only on small devices - xs, sm, md -->
+                        <li class="nav-item pl-3 pr-3 font-weight-bold d-block d-lg-none">
+                            <a class="nav-link text-gray-dark" href="{{ site.resume_link }}" >CV</a> <!-- Change CV to something else in navbar here-->
                         </li>
+
+                        <!-- Display only on big devices lg, xl -->
+                        <li class="nav-item pl-3 pr-3 font-weight-bold d-none d-lg-block">
+                            <a href="/resume.html" class="nav-link text-gray-dark">CV</a> <!-- Change CV to something else in navbar here-->
+                        </li>
+
                     </ul>
                 </div>
 
@@ -55,7 +64,7 @@
                     </li>
 
                     <li class="nav-item mx-auto">
-                        <a class="nav-link" href="mailto:{{site.general_email}}" title="Email Me">
+                        <a class="nav-link" href="mailto:{{ site.general_email }}" title="Email Me">
                             <i class="fas fa-at" style="font-size: 2rem;"></i>
                         </a>
                     </li>

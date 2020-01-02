@@ -2,7 +2,11 @@
 layout: blank
 ---
 <div class="d-flex justify-content-center p-5 bg-dark">
-    <button type="button" class="btn btn-primary btn-lg">
+    <button type="button" class="btn btn-success btn-lg mx-1">
+        <a class=" text-white"
+            href="{{ site.baseurl }}/index">Home</a>
+    </button>
+    <button type="button" class="btn btn-primary btn-lg mx-1">
         <a class=" text-white" id="resume-link"
             href="{{ site.resume_link }}">Download</a>
     </button>
@@ -29,6 +33,9 @@ layout: blank
         var pageStarts = new Array();
         pageStarts[0] = 0;
 
+        function callGetDocment (response) {
+        // body...
+
         pdfjsLib.getDocument(url).then(function getPdfHelloWorld(_pdf) {
             pdf = _pdf;
             //Render all the pages on a single canvas
@@ -52,14 +59,34 @@ layout: blank
                 });
             }
 
-
             canvas.width = canvasWidth;
             canvas.height = canvasHeight;  // this auto-clears all canvas contents
             for (var i = 0; i < pages.length; i++) {
                 context.putImageData(pages[i], 0, pageStarts[i]);
             }
-
         });
+        }
+
+        function getBinaryData (url) {
+            // body...
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', url, true);
+            xhr.responseType = 'arraybuffer';
+            xhr.onload = function(e) {
+                //binary form of ajax response,
+                callGetDocment(e.currentTarget.response);
+            };
+
+            xhr.onerror = function  () {
+                // body...
+                alert("xhr error");
+            }
+
+            xhr.send();
+        }
+
+        getBinaryData(url)
     </script>
     </a>
 </div>
